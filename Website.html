@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoClicker Bookmarklet</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://cdn.glitch.com/88e143a7-ac7e-4a2e-8d5b-249b8e3bb081%2F9dfb57f8-8e70-479f-b884-ca6038b72c28.image.png?v=1601930253508" type="image/x-icon">
+</head>
+<body class="w3-black w3-padding-large" style="cursor: default;">
+    <p class="w3-center w3-text-red">
+        HEY
+    </p>
+
+    <h1 class="w3-jumbo w3-center w3-margin-top">
+        <a class="w3-text-red">The</a> Bookmarklets
+    </h1>
+    <h2 class="w3-center">
+        Click up to 200cps with a tiny bookmarklet
+    </h2>
+    <center>
+        <a class="w3-button w3-center w3-red" href="javascript:(function() {
+            var s = prompt('What do you want to search?');
+            if (s) {
+                window.open('https://www.google.com/search?q=' + s);
+            }
+        })()">QuickSearch</a>
+        <a class="w3-button w3-center w3-red" href="javascript:(https://minesraft2.github.io/Blooket-Cheats/)()">BlooketCheatsWebSite</a>
+        <a class="w3-button w3-center w3-red" href="javascript:(function() {let x = document.createElement('script'); x.src = 'https://cdn.jsdelivr.net/gh/SnowLord7/quizlet%40master/index.js'; x.onload = function() {x.remove();}; document.body.appendChild(x);})()">QuizletCheat</a>
+        <a class="w3-button w3-center w3-red" href="javascript:(function() {  if (document.body.contentEditable === 'false' || document.body.contentEditable === 'inherit') {    document.body.contentEditable = 'true'; document.designMode='on';  } else {    document.body.contentEditable = 'false'; document.designMode='off';  }})()">WebSIteEditor</a>
+        <a class="w3-button w3-center w3-red" href="javascript:(https://scratch.mit.edu/)()">OpenScratch</a>
+        <a class="w3-button w3-center w3-red" href="javascript:(function(x, y) {
+            if (!window.click) {
+                window.click = true;
+                document.body.style.cursor = 'crosshair';
+                var cps = prompt('Autoclicker CPS: (Under 200 recommended)');
+                if (!cps || isNaN(cps)) {
+                    alert('You entered something wrong. Try running the script again.');
+                    end();
+                } else {
+                    alert('Autoclicker activated at ' + cps + ' CPS! Do [ctrl+e] to stop.');
+                }
+                addEventListener('mousemove', e => {
+                    x = e.clientX;
+                    y = e.clientY;
+                });
+                addEventListener('keydown', e => {
+                    if (e.key === 'e' && e.ctrlKey) {
+                        alert('Autoclicker deactivated! Click the bookmark again to reactivate!');
+                        end();
+                    }
+                });
+                if (window.click) {
+                    var int = setInterval(function() {
+                        var e = document.elementFromPoint(x, y);
+                        if (e) {
+                            e.click();
+                        }
+                    }, 1000 / cps);
+                }
+            }
+            function end() {
+                clearInterval(int);
+                window.click = false;
+                document.body.style.cursor = 'default';
+            }
+        })()">AutoClicker</a>
+        <p>
+            Drag the buttons above to your bookmark bar
+        </p>
+        <button class="w3-button w3-hover-white" id="clickcounter">1447 clicks</button>
+        <script src="click.js"></script>
+    </center>
+</body>
+</html>
